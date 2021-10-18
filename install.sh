@@ -7,8 +7,8 @@ eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 brew install neovim
 
-mkdir -p "~/.local/share/nvim/site/autoload/"
+mkdir -p ~/.local/share/nvim/site/autoload/
 
-mkdir -p "~/.config/nvim"
+mkdir -p ~/.config/nvim
 
-ln -s -f "./vim/*" "~/.config/nvim"
+ln -s -f ./vim/* ~/.config/nvim
