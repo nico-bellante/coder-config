@@ -11,4 +11,4 @@ mkdir -p "~/.local/share/nvim/site/autoload/"
 
 mkdir -p "~/.config/nvim"
 
-ln -s "./vim/*" "~/.config/nvim"
+ln -s -f "./vim/*" "~/.config/nvim"
