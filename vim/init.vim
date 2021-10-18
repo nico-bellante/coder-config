@@ -32,10 +32,10 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 call plug#end()
 
-source theme.vim
-source binding.vim
-source language-config.vim
-source coc-config.vim
-source nico.vim
-source util.vim
+source ~/.config/nvim/theme.vim
+source ~/.config/nvim/binding.vim
+source ~/.config/nvim/language-config.vim
+source ~/.config/nvim/coc-config.vim
+source ~/.config/nvim/nico.vim
+source ~/.config/nvim/util.vim
 
