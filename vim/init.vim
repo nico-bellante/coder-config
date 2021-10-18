@@ -31,10 +31,10 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend upda
 
 call plug#end()
 
-runtime! theme.vim
-runtime! binding.vim
-runtime! language-config.vim
-runtime! coc-config.vim
-runtime! nico.vim
-runtime! util.vim
+source theme.vim
+source binding.vim
+source language-config.vim
+source coc-config.vim
+source nico.vim
+source util.vim
 
