@@ -7,4 +7,4 @@ mkdir -p "~/.local/share/nvim/site/autoload/"
 
 mkdir -p "~/.config/nvim"
 
-cp -r "vim/*" "~/.config/nvim/"
+ln -s "./vim/*" "~/.config/nvim"
