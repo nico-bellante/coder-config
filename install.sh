@@ -7,6 +7,7 @@ eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 
 brew install neovim
+brew install bat
 
 mkdir -p ~/.local/share/nvim/site/autoload/
 
