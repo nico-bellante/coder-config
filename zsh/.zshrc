@@ -4,6 +4,7 @@ ZSH_THEME="robbyrussell"
 plugins=(git autojump)
 
 source ~/.aliases
+source $ZSH/oh-my-zsh.sh
 
 autoload -Uz compinit
 compinit
