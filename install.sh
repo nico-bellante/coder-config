@@ -23,4 +23,4 @@ mkdir -p ~/.config/nvim
 ln -s -f ~/dotfiles/vim/* ~/.config/nvim
 
 
-source .zshrc
+source ~/.zshrc
