@@ -6,7 +6,10 @@ echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> /home/discord/.
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 # zsh
-sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+if [ ! -d "$ZSH" ]; then
+  sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+fi
+
 ln -s -f ~/dotfiles/zsh/.aliases ~/.aliases
 ln -s -f ~/dotfiles/zsh/.zshrc ~/.zshrc
 
