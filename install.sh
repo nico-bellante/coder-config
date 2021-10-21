@@ -21,3 +21,6 @@ mkdir -p ~/.local/share/nvim/site/autoload/
 mkdir -p ~/.config/nvim
 
 ln -s -f ~/dotfiles/vim/* ~/.config/nvim
+
+
+source .zshrc
