@@ -16,11 +16,10 @@ ln -s -f ~/dotfiles/zsh/.zshrc ~/.zshrc
 brew install neovim
 brew install autojump
 brew install bat
+brew install rg
 
 mkdir -p ~/.local/share/nvim/site/autoload/
 mkdir -p ~/.config/nvim
 
 ln -s -f ~/dotfiles/vim/* ~/.config/nvim
 
-
-source ~/.zshrc
