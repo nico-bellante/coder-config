@@ -3,6 +3,9 @@ plugins=(git autojump)
 
 source ~/.aliases
 
+autoload -Uz compinit
+compinit
+
 _clyde() {
   eval $(env COMMANDLINE="${words[1,$CURRENT]}" _CLYDE_COMPLETE=complete-zsh clyde)
 }
