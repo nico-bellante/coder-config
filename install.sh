@@ -18,6 +18,9 @@ brew install autojump
 brew install bat
 brew install rg
 
+
+sudo npm install -g typescript typescript-language-server
+
 mkdir -p ~/.local/share/nvim/site/autoload/
 mkdir -p ~/.config/nvim
 

@@ -19,6 +19,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'preservim/nerdtree'
 Plug 'luochen1990/rainbow' " rainbow parens
 Plug 'akinsho/toggleterm.nvim'
+Plug 'nvim-telescope/telescope.nvim'
 
 " improved vim features
 Plug 'tpope/vim-surround'
@@ -39,6 +40,7 @@ Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 call plug#end()
+
 
 source ~/.config/nvim/theme.vim
 source ~/.config/nvim/editor.vim
