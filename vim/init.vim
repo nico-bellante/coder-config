@@ -9,6 +9,8 @@ call plug#begin("~/.local/share/nvim/site/plugged") " where the plugs will be dl
 " themes
 Plug 'kaicataldo/material.vim'
 Plug 'gosukiwi/vim-atom-dark'
+Plug 'olimorris/onedarkpro.nvim'
+Plug 'kyazdani42/nvim-web-devicons'
 
 " editor functionality
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
@@ -17,17 +19,21 @@ Plug 'preservim/nerdtree'
 Plug 'luochen1990/rainbow' " rainbow parens
 
 " improved vim features
-Plug 'itchyny/lightline.vim' " status line
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-fugitive'
+Plug 'itchyny/lightline.vim'
 
 " language stuffs 
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
+Plug 'nvim-lua/plenary.nvim'
+Plug 'neovim/nvim-lspconfig'
+Plug 'jose-elias-alvarez/null-ls.nvim'
+
 Plug 'leafgarland/typescript-vim'
 Plug 'peitalin/vim-jsx-typescript'
 Plug 'jparise/vim-graphql'
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 call plug#end()
