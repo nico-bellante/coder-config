@@ -11,12 +11,14 @@ Plug 'kaicataldo/material.vim'
 Plug 'gosukiwi/vim-atom-dark'
 Plug 'olimorris/onedarkpro.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
+Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
 
 " editor functionality
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'preservim/nerdtree'
 Plug 'luochen1990/rainbow' " rainbow parens
+Plug 'akinsho/toggleterm.nvim'
 
 " improved vim features
 Plug 'tpope/vim-surround'
@@ -39,6 +41,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 
 source ~/.config/nvim/theme.vim
+source ~/.config/nvim/editor.vim
 source ~/.config/nvim/binding.vim
 source ~/.config/nvim/language-config.vim
 source ~/.config/nvim/coc-config.vim
