@@ -26,7 +26,10 @@ fi
 
 brew install coreutils
 
-if [ ! -d "$ZSH" ]; then
+
+
+# zsh
+if [ ! -d "$HOME/.oh-my-zsh" ] ; then
   yes | sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 fi
 
