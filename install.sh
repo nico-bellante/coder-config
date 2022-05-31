@@ -49,6 +49,7 @@ yes | brew upgrade
 
 
 sudo npm install -g typescript typescript-language-server
+sudo npm install -g pyright
 
 mkdir -p ~/.local/share/nvim/site/autoload/
 mkdir -p ~/.config/nvim
