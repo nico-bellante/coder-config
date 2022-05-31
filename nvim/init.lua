@@ -211,6 +211,7 @@ map {'n', '<Leader><Leader>', "<cmd>lua require('telescope.builtin').find_files(
 map {'n', '<Leader>g', "<cmd>lua require('telescope.builtin').git_status()<CR>"}
 map {'n', '<Leader>f', "<cmd>lua require('telescope.builtin').live_grep()<CR>"}
 map {'n', '<Leader>s', "<cmd>lua require('telescope.builtin').git_status()<CR>"}
+map {'n', '<Leader>o', "<cmd>lua require('telescope.builtin').oldfiles()<CR>"}
 map {'n', '<Leader>v', "<cmd>:e $MYVIMRC<CR>"}
 map {'n', '<Leader>]', "<cmd>:Fern %:h<CR>"}
 
