@@ -55,3 +55,4 @@ mkdir -p ~/.config/nvim
 
 ln -s -f ~/dotfiles/vim/* ~/.config/nvim
 
+nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
