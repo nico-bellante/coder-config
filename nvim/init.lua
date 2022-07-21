@@ -45,7 +45,7 @@ require('packer').startup(function(use)
                                              -- the default case_mode is "smart_case"
           }
         }
-      }       
+      }
 
       require('telescope').load_extension('fzf')
     end
@@ -53,7 +53,7 @@ require('packer').startup(function(use)
 
   use 'tpope/vim-fugitive'
   use 'tpope/vim-eunuch'
-  
+
   -- git
   use {
     'lewis6991/gitsigns.nvim',
@@ -76,9 +76,9 @@ require('packer').startup(function(use)
   use 'vimwiki/vimwiki'
 
 
-  use { 
+  use {
     "folke/lua-dev.nvim",
-    config = function() 
+    config = function()
       require('lua-dev').setup({})
     end
   }
@@ -87,13 +87,13 @@ require('packer').startup(function(use)
     'kyazdani42/nvim-web-devicons',
     config = function()
       require('nvim-web-devicons').setup()
-    end 
+    end
   }
 
   use {
     'lambdalisue/fern.vim',
     requires={
-      {'antoinemadec/FixCursorHold.nvim'}, 
+      {'antoinemadec/FixCursorHold.nvim'},
     }
   }
 
@@ -105,6 +105,12 @@ require('packer').startup(function(use)
 
 
   use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
+
+  use {'luochen1990/rainbow',
+    config = function()
+      vim.g.rainbow = 1
+    end
+  }
 
   use {
     'mhartington/formatter.nvim',
@@ -158,10 +164,10 @@ require('packer').startup(function(use)
     end
   }
 
-  use { -- Unified highlight for all filetypes
-      'nvim-treesitter/nvim-treesitter',
-      run = ':TSUpdate',
-  }
+
+  use 'tpope/vim-rhubarb'
+
+  use 'github/copilot.vim'
 
 
   -- Automatically set up your configuration after cloning packer.nvim
@@ -170,15 +176,6 @@ require('packer').startup(function(use)
     require('packer').sync()
   end
 end)
-require'nvim-treesitter.configs'.setup { 
-  -- ensure_installed={"bash", "css", "graphql", "html", "javascript", "json", "lua", "python", "tsx", "typescript", "yaml"},
-  ensure_installed="maintained",
-  ignore_install={"haskell"},
-  highlight = {
-    enabled = true
-  }
-}
-require "nvim-treesitter.highlight"
 
 vim.api.nvim_exec([[
 augroup FormatAutogroup
@@ -191,7 +188,7 @@ augroup END
 vim.g.tokyonight_style = "night"
 vim.cmd[[colorscheme tokyonight]]
 
-vim.opt.expandtab = true 
+vim.opt.expandtab = true
 vim.opt.shiftwidth = 2
 vim.opt.smartindent = true
 
@@ -214,7 +211,9 @@ map {'n', '<Leader><Leader>', "<cmd>lua require('telescope.builtin').find_files(
 map {'n', '<Leader>g', "<cmd>lua require('telescope.builtin').git_status()<CR>"}
 map {'n', '<Leader>f', "<cmd>lua require('telescope.builtin').live_grep()<CR>"}
 map {'n', '<Leader>s', "<cmd>lua require('telescope.builtin').git_status()<CR>"}
+map {'n', '<Leader>o', "<cmd>lua require('telescope.builtin').oldfiles()<CR>"}
 map {'n', '<Leader>v', "<cmd>:e $MYVIMRC<CR>"}
+map {'n', '<Leader>]', "<cmd>:Fern %:h<CR>"}
 
 function nvim_create_augroups(definitions)
     for group_name, definition in pairs(definitions) do
@@ -308,6 +307,8 @@ cmp.setup({
     ['<C-e>'] = cmp.mapping.close(),
     ['<C-y>'] = cmp.config.disable, -- If you want to remove the default `<C-y>` mapping, You can specify `cmp.config.disable` value.
     ['<CR>'] = cmp.mapping.confirm({ select = true }),
+    ['<Down>'] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Select }),
+    ['<Up>'] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Select }),
   },
   sources = cmp.config.sources({
     { name = 'nvim_lsp' },
@@ -316,8 +317,8 @@ cmp.setup({
   })
 })
 
-  -- Setup lspconfig.
-  local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
-  require('lspconfig')['pyright'].setup {
-    capabilities = capabilities
-  }
+-- Setup lspconfig.
+local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+require('lspconfig')['pyright'].setup {
+  capabilities = capabilities
+}
