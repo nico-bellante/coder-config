@@ -51,7 +51,7 @@ yes | brew upgrade
 sudo npm install -g typescript typescript-language-server
 
 mkdir -p ~/.local/share/nvim/site/autoload/
-mkdir -p ~/.config/nvim
 
-ln -s -f ~/dotfiles/vim/* ~/.config/nvim
+git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1
 
+cp -r ./nvim/custom ~/.config/nvim/lua/custom
