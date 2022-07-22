@@ -50,11 +50,12 @@ yes | brew upgrade
 
 sudo npm install -g typescript typescript-language-server
 sudo npm install -g pyright
+sudo npm install -g prettierd
 
 mkdir -p ~/.local/share/nvim/site/autoload/
 
 git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1
 
-cp -r ./nvim/custom ~/.config/nvim/lua/custom
+bash copy_custom_nvchad.sh
 
 nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'

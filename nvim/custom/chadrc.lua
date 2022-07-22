@@ -15,9 +15,11 @@ M.plugins = {
    options = {
       lspconfig = {
          setup_lspconf = "custom.plugins.lspconfig"
-      }
+      },
+      nvimtree = function() 
+         require("nvim-tree").setup({view = {side = "right"}})
+      end   
    },
-   -- remove = {'nvim-treesitter/nvim-treesitter'},
    user = {
       ['nvim-telescope/telescope-fzf-native.nvim'] = {run = 'make'},
       ['nvim-treesitter/playground'] = {
@@ -43,6 +45,16 @@ M.plugins = {
                }
              }
          end
+      },
+      ['jose-elias-alvarez/null-ls.nvim'] = {
+         after = "nvim-lspconfig",
+         config=function() 
+            require('null-ls').setup({
+               sources = {
+                  require('null-ls').builtins.formatting.prettierd
+               },
+            })
+         end
       }
    },
    override = {
@@ -56,7 +68,7 @@ M.plugins = {
                case_mode = 'smart_case',
             }
          }
-      }
+      },
    }
 }
 
