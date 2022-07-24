@@ -2,14 +2,6 @@
 
 set -e
 
-echo "Checking if Homebrew is installed..."
-
-# Update and Upgrade
-echo "Updating and upgrading Homebrew..."
-yes | brew update
-yes | brew upgrade
-
-
 if test ! $(which brew); then
   echo "Installing Homebrew..."
   yes | /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
@@ -29,6 +21,13 @@ if test ! $(which brew); then
 else
   echo "Homebrew is already installed..."
 fi
+
+echo "Checking if Homebrew is installed..."
+
+# Update and Upgrade
+echo "Updating and upgrading Homebrew..."
+yes | brew update
+yes | brew upgrade
 
 brew install coreutils
 
