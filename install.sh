@@ -53,10 +53,11 @@ sudo npm install -g @fsouza/prettierd
 
 mkdir -p ~/.local/share/nvim/site/autoload/
 
+rm -rf ~/.config/nvim
+
 git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1
 git clone https://github.com/nico-bellante/nv-custom ~/nv-custom
 
-rm -rf ~/.config/nvim
 cd ~/nv-custom
 ./symlink_custom_folder.sh
 
