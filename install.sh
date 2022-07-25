@@ -56,6 +56,7 @@ mkdir -p ~/.local/share/nvim/site/autoload/
 git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1
 git clone https://github.com/nico-bellante/nv-custom ~/nv-custom
 
+rm -rf ~/.config/nvim/lua/custom
 cd ~/nv-custom
 ./symlink_custom_folder.sh
 
