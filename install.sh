@@ -18,6 +18,8 @@ if test ! $(which brew); then
     echo "Installing net-tools"
     sudo apt-get -y install net-tools
   fi
+  echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> /home/discord/.zprofile
+  eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 else
   echo "Homebrew is already installed..."
 fi
@@ -56,7 +58,13 @@ mkdir -p ~/.local/share/nvim/site/autoload/
 rm -rf ~/.config/nvim
 
 git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1
-git clone https://github.com/nico-bellante/nv-custom ~/nv-custom
+
+if [ ! -d "$HOME/nv-custom" ]; then
+  git clone https://github.com/nico-bellante/nv-custom ~/nv-custom
+else
+  cd ~/nv-custom
+  git pull 
+fi
 
 cd ~/nv-custom
 ./symlink_custom_folder.sh
