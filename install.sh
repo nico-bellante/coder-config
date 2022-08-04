@@ -52,6 +52,7 @@ brew install stylua
 sudo npm install -g typescript typescript-language-server
 sudo npm install -g pyright
 sudo npm install -g @fsouza/prettierd
+sudo npm install -g cssmodules-language-server
 
 mkdir -p ~/.local/share/nvim/site/autoload/
 
